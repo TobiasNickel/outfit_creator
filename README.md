@@ -55,6 +55,15 @@ Utils contains a helper to do http requests with included json parsing. And a gi
 go test -tags=integration ./integration
 ```
 
+# API
+There is only one endpoint:
+
+```
+GET /api/outfit/random
+```
+It can receive two paramete:
+ - **gender** can be male or female (default male)
+ - **country** the two letter short name for a country (default de)
 
 
 
