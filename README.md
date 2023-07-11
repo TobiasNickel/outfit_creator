@@ -51,6 +51,15 @@ All other Modules are in the `internal` directory, that is a golang convention t
 
 Utils contains a helper to do http requests with included json parsing. And a gin middleware for serving static files. I needed to implement this, because standard solutions did not work well for Single Page Applications (did not serve the index.html, even with configuration).
 
+# tests
+The Backend is simple and consists mainly out of integrations. Thus I deem integration tests as sufficient.
+To do the integration tests, the creation of the gin server is put into its own server package.
+you can run the tests using:
+
+```sh
+go test ./integration
+``` 
+
 ```go
 go test -tags=integration ./integration
 ```
