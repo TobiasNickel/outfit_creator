@@ -6,8 +6,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
+	"github.com/TobiasNickel/outfit_creator/_internal/server"
 	"github.com/TobiasNickel/outfit_creator/frontend"
-	"github.com/TobiasNickel/outfit_creator/internal/server"
 )
 
 func TestPing(t *testing.T) {

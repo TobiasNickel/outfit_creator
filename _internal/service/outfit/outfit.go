@@ -4,8 +4,8 @@ import (
 	"math/rand"
 	"strconv"
 
-	"github.com/TobiasNickel/outfit_creator/internal/type/outfit"
-	"github.com/TobiasNickel/outfit_creator/internal/utils/httpclient"
+	"github.com/TobiasNickel/outfit_creator/_internal/type/outfit"
+	"github.com/TobiasNickel/outfit_creator/_internal/utils/httpclient"
 	"github.com/pkg/errors"
 )
 
