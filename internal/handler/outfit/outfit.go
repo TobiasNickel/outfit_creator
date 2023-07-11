@@ -15,11 +15,11 @@ func RegisterOutfitHandler(r *gin.RouterGroup) {
 		if gender == "" {
 			gender = "FEMALE"
 		}
-		language := c.Query("language")
-		if language == "" {
-			language = "de"
+		country := c.Query("country")
+		if country == "" {
+			country = "de"
 		}
-		accessory, upper, under, err := outfit.GetRandomOutfit(strings.ToUpper(gender), strings.ToLower(language))
+		accessory, upper, under, err := outfit.GetRandomOutfit(strings.ToUpper(gender), strings.ToLower(country))
 		if err != nil {
 			c.AbortWithError(http.StatusInternalServerError, err)
 			return

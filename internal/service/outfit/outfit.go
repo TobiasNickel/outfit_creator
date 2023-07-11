@@ -9,18 +9,18 @@ import (
 	"github.com/pkg/errors"
 )
 
-func GetRandomOutfit(gender, language string) (accessory, upper, under *outfit.APIResponseItem, err error) {
-	accessory, err = GetRandomItem(gender, language, outfit.SECTION_ACCESSORIES)
+func GetRandomOutfit(gender, country string) (accessory, upper, under *outfit.APIResponseItem, err error) {
+	accessory, err = GetRandomItem(gender, country, outfit.SECTION_ACCESSORIES)
 	if err != nil {
 		err = errors.Wrap(err, "could not get SECTION_ACCESSORIES")
 		return
 	}
-	upper, err = GetRandomItem(gender, language, outfit.SECTION_UPPER)
+	upper, err = GetRandomItem(gender, country, outfit.SECTION_UPPER)
 	if err != nil {
 		err = errors.Wrap(err, "could not get SECTION_UPPER")
 		return
 	}
-	under, err = GetRandomItem(gender, language, outfit.SECTION_UNDER)
+	under, err = GetRandomItem(gender, country, outfit.SECTION_UNDER)
 	if err != nil {
 		err = errors.Wrap(err, "could not get SECTION_UNDER")
 		return
@@ -28,20 +28,23 @@ func GetRandomOutfit(gender, language string) (accessory, upper, under *outfit.A
 	return
 }
 
-func GetRandomItem(gender, language, section string) (*outfit.APIResponseItem, error) {
-	count, err := GetCount(gender, language, section)
+func GetRandomItem(gender, country, section string) (*outfit.APIResponseItem, error) {
+	count, err := GetCount(gender, country, section)
 	if err != nil {
 		return nil, errors.Wrap(err, "could not count")
 	}
+	if count == 0 {
+		return nil, nil
+	}
 	randomNumber := rand.Int() % count
-	item, err := getByOffset(gender, language, section, randomNumber)
+	item, err := getByOffset(gender, country, section, randomNumber)
 	if err != nil {
 		return nil, errors.Wrap(err, "could not count")
 	}
 	return item, nil
 }
 
-func GetCount(gender, language, section string) (int, error) {
+func GetCount(gender, country, section string) (int, error) {
 	type Counter struct {
 		TotalCount int `json:"totalCount"`
 	}
@@ -55,7 +58,7 @@ func GetCount(gender, language, section string) (int, error) {
 	httpClient := httpclient.New()
 	err = httpClient.Get(
 		"https://api.newyorker.de/csp/products/public/query"+
-			"?filters[country]=de"+
+			"?filters[country]="+country+
 			"&filters[gender]="+gender+
 			"&filters[web_category]="+category+
 			"&limit=1",
@@ -66,7 +69,7 @@ func GetCount(gender, language, section string) (int, error) {
 
 	return counter.TotalCount, nil
 }
-func getByOffset(gender, language, section string, offset int) (*outfit.APIResponseItem, error) {
+func getByOffset(gender, country, section string, offset int) (*outfit.APIResponseItem, error) {
 	httpClient := httpclient.New()
 	var response outfit.OutfitAPIResponse
 	category, err := getCategory(gender, section)
@@ -76,7 +79,7 @@ func getByOffset(gender, language, section string, offset int) (*outfit.APIRespo
 
 	err = httpClient.Get(
 		"https://api.newyorker.de/csp/products/public/query"+
-			"?filters[country]=de"+
+			"?filters[country]="+country+
 			"&filters[gender]="+gender+
 			"&filters[web_category]="+category+
 			"&limit=1&offset="+strconv.FormatInt(int64(offset), 10),
