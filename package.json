@@ -1,0 +1,25 @@
+{
+  "name": "outfit_creator",
+  "version": "1.0.0",
+  "description": "A task to verify the software development skills on the example of a webapp for creating a random outfit based on the new yorker Produkt-REST-API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "concurrently \"npm:watch-*\"",
+    "watch-frontend": "npm run watch-build --prefix frontend",
+    "watch-backend": "nodemon --exec \"go run programs/server/server.go --develop\" -e \"go\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TobiasNickel/outfit_creator.git"
+  },
+  "author": "Tobias Nickel",
+  "bugs": {
+    "url": "https://github.com/TobiasNickel/outfit_creator/issues"
+  },
+  "homepage": "https://github.com/TobiasNickel/outfit_creator#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "nodemon": "^3.0.1"
+  }
+}

@@ -1,0 +1,58 @@
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-bottom:1em;
+  }
+  
+  .item .name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .item .brand {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .item .maintenance_group {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .item .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .item img {
+    width: 100%;
+    height: auto;
+    /* aspect-ratio: 2/3; set aspect ratio to 2x3 */
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+  }
+  
+  .item .buy_now_link a {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .item .buy_now_link a:hover {
+    background-color: #333;
+  }

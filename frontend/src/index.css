@@ -1,0 +1,28 @@
+select, button, input {
+    margin:0.2em;
+    padding:0.2em;
+    display: inline-block;
+    min-width: 10em;
+    min-height:2em;
+    line-height: 1.2em;
+}
+
+
+#root{
+    width:640px;
+    margin-right:auto;
+    margin-left: auto;
+    background-color: white;
+    padding:1em;
+    min-height: 90vh;
+}
+body{
+    font-family:'Times New Roman', Times, serif;
+    background-color: #c2c1c7;
+    color: rgb(63, 15, 15);
+}
+
+h1{
+    margin-top:0.1em;
+    margin-bottom:0.6em;
+}

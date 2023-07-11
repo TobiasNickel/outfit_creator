@@ -1,0 +1,19 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild src/index.tsx --bundle --outfile=public/assets/index.js",
+    "watch-build": "npm run build -- --sourcemap=inline --watch"
+  },
+  "author": "Tobias Nickel",
+  "devDependencies": {
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "esbuild": "^0.18.11",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
