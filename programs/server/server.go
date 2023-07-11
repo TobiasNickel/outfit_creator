@@ -4,7 +4,7 @@ import (
 	"flag"
 
 	"github.com/TobiasNickel/outfit_creator/frontend"
-	"github.com/TobiasNickel/outfit_creator/internal/server"
+	"github.com/TobiasNickel/outfit_creator/_internal/server"
 )
 
 func main() {

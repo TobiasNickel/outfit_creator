@@ -3,8 +3,8 @@ package server
 import (
 	"net/http"
 
-	"github.com/TobiasNickel/outfit_creator/internal/handler/outfit"
-	"github.com/TobiasNickel/outfit_creator/internal/utils/staticMiddleware"
+	"github.com/TobiasNickel/outfit_creator/_internal/handler/outfit"
+	"github.com/TobiasNickel/outfit_creator/_internal/utils/staticMiddleware"
 	"github.com/gin-gonic/gin"
 )
 

@@ -5,7 +5,7 @@ import (
 
 	"strings"
 
-	"github.com/TobiasNickel/outfit_creator/internal/service/outfit"
+	"github.com/TobiasNickel/outfit_creator/_internal/service/outfit"
 	"github.com/gin-gonic/gin"
 )
 
