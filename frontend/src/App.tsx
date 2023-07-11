@@ -29,7 +29,7 @@ export function App() {
     return (
         <>
             <h1>Outfit Vorschlag</h1>
-            <div>
+            <div className='controlls'>
                 <select value={gender} onChange={(e)=>setGender(e.target.value as Gender)}>
                     <option value='FEMALE'>👩‍🦰 weiblich</option>
                     <option value='MALE'>👨‍🦰männlich</option>

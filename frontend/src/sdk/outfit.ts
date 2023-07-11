@@ -1,6 +1,6 @@
 
 export async function random(gender: Gender, language: Language): Promise<TItemResponse> {
-    return fetch('/api/outfit/random?gender=' + encodeURIComponent(gender) + '&language=' + encodeURIComponent(language)).then(r => r.json());
+    return fetch('/api/outfit/random?gender=' + encodeURIComponent(gender) + '&country=' + encodeURIComponent(language)).then(r => r.json());
 }
 
 export enum Gender {

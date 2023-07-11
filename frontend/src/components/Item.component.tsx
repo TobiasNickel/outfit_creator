@@ -4,7 +4,7 @@ import './Item.css'
 export function Item({item, imageType, language}: {item: TItem, imageType: ImageType, language: Language}) {
     if(!item){
         return (
-            <>no item</>
+            <div className="item">no item</div>
         )
     }
     const images = findAllItemImages(item)

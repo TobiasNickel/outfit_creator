@@ -2,3 +2,7 @@ span.label{
     display: inline-block;
     min-width: 5em;
 }
+
+.controlls{
+    margin-bottom:1em;
+}
